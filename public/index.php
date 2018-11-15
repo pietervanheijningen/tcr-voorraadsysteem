@@ -2,4 +2,6 @@
 
 require '../vendor/autoload.php';
 
-echo getenv('TEST');
+$pageLoader = new \App\PageLoader();
+
+$pageLoader->testPage();
