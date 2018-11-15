@@ -1,9 +1,5 @@
 <?php
 
-use Symfony\Component\Dotenv\Dotenv;
+define('PROJECT_ROOT', __DIR__ . '/');
 
-define('PROJECT_ROOT', __DIR__);
-
-$dotenv = new Dotenv();
-
-$dotenv->load(PROJECT_ROOT . '/.env');
+(new Symfony\Component\Dotenv\Dotenv)->load(PROJECT_ROOT . '.env');

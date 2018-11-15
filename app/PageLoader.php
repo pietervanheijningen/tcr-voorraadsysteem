@@ -13,14 +13,14 @@ class PageLoader
 	public function __construct()
 	{
 		$this->twig = new Twig_Environment(
-			new Twig_Loader_Filesystem(PROJECT_ROOT . '/views')
+			new Twig_Loader_Filesystem(PROJECT_ROOT . 'views')
 		);
 	}
 
 	public function testPage()
 	{
-		echo $this->twig->render('testpage.html', [
-			'name' => 'Pieter',
+		echo $this->twig->render('testpage.twig', [
+			'name' => getenv('name'),
 		]);
 	}
 }
