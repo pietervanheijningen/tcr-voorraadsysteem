@@ -30,6 +30,7 @@ $brands = [
     'Scapino',
     'Vans',
     'Tommy Hilfiger',
+    'Reebok',
 ];
 
 $shoeNamePart1 = [
