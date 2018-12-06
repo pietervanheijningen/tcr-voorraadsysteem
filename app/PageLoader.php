@@ -8,19 +8,22 @@ use Twig_Loader_Filesystem;
 
 class PageLoader
 {
-	private $twig;
+    private $twig;
+    private $db;
 
-	public function __construct()
-	{
-		$this->twig = new Twig_Environment(
-			new Twig_Loader_Filesystem(PROJECT_ROOT . 'views')
-		);
-	}
+    public function __construct(){
+        $this->twig = new Twig_Environment(
+            new Twig_Loader_Filesystem(PROJECT_ROOT.'views')
+        );
 
-	public function testPage()
-	{
-		echo $this->twig->render('testpage.twig', [
-			'name' => getenv('name'),
-		]);
-	}
+        $this->db = new DatabaseConnection;
+    }
+
+    public function brandsOverview(){
+        echo $this->twig->render('brandsOverview.twig',
+            [
+                'brands' => $this->db->getAllBrands(),
+            ]
+        );
+    }
 }

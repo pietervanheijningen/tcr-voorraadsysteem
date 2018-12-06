@@ -1,0 +1,15 @@
+.brandcard {
+    color: inherit;
+    text-decoration: none;
+}
+
+.brandcard:hover {
+    color: currentColor !important;
+    text-decoration: none;
+}
+
+.brandcard > .card {
+    height: 400px !important;
+    display: flex;
+    justify-content: center;
+}

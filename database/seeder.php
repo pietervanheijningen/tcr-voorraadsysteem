@@ -29,7 +29,6 @@ $brands = [
     'Converse',
     'Scapino',
     'Vans',
-    'Kipling',
     'Tommy Hilfiger',
 ];
 

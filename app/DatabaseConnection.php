@@ -3,11 +3,11 @@
 
 namespace App;
 
-use PDO,PDOException;
+use PDO, PDOException;
 
 class DatabaseConnection
 {
-    public $pdo;
+    private $pdo;
 
     public function __construct(){
 
@@ -23,5 +23,12 @@ class DatabaseConnection
         }catch(PDOException $e){
             die($e->getMessage());
         }
+    }
+
+    public function getAllBrands(){
+        $query = $this->pdo->prepare('select distinct brand from shoes');
+        $query->execute();
+
+        return $query->fetchAll();
     }
 }
