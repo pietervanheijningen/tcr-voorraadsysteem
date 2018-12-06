@@ -4,8 +4,8 @@
     <h2>Alle merken:</h2>
     <div class="row mt-2 mb-4">
         {% for brand in brands %}
-            <div class="col-4 mt-4">
-                <a href="/brands/?b={{ brand.brand }}" class="brandcard">
+            <div class="col-12 col-sm-6 col-lg-4 mt-4">
+                <a href="/shoes/?brand={{ brand.brand }}" class="brandcard">
                     <div class="card hvr-grow h-100">
                         <h2 class="text-center">{{ brand.brand }}</h2>
                     </div>

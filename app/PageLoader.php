@@ -26,4 +26,13 @@ class PageLoader
             ]
         );
     }
+
+    public function shoesOverview($brand){
+        echo $this->twig->render('shoesOverview.twig',
+            [
+                'shoes' => $this->db->getAllShoesFromBrand($brand),
+                'brand' => $brand,
+            ]
+        );
+    }
 }

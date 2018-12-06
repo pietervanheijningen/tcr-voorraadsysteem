@@ -26,9 +26,18 @@ class DatabaseConnection
     }
 
     public function getAllBrands(){
-        $query = $this->pdo->prepare('select distinct brand from shoes');
+        $query = $this->pdo->prepare('SELECT DISTINCT brand FROM shoes');
         $query->execute();
 
-        return $query->fetchAll();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAllShoesFromBrand($brand){
+        $query = $this->pdo->prepare('SELECT name,count(*) AS amount FROM shoes WHERE brand = :brand GROUP BY name ORDER BY amount DESC');
+        $query->execute([
+            'brand' => $brand
+        ]);
+
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 }
