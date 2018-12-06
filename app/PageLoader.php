@@ -35,4 +35,14 @@ class PageLoader
             ]
         );
     }
+
+    public function inventoryOverview($brand, $shoeName){
+        echo $this->twig->render('inventoryOverview.twig',
+            [
+                'inventoryItems' => $this->db->getInventory($brand, $shoeName),
+                'brand' => $brand,
+                'shoeName' => $shoeName,
+            ]
+        );
+    }
 }

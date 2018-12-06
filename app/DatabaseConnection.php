@@ -40,4 +40,14 @@ class DatabaseConnection
 
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getInventory($brand, $shoeName){
+        $query = $this->pdo->prepare('SELECT article_number,size,color,price,is_sold FROM shoes WHERE brand = :brand AND name = :shoeName');
+        $query->execute([
+            'brand' => $brand,
+            'shoeName' => $shoeName,
+        ]);
+
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

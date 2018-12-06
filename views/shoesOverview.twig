@@ -15,7 +15,13 @@
             <tr>
                 <td>{{ shoe.name }}</td>
                 <td>{{ shoe.amount }}</td>
-                <td><a href="#"><button type="button" class="btn btn-primary"><i class="fas fa-boxes"></i></button></a></td>
+                <td>
+                    <a href="/inventory/?brand={{ brand }}&shoeName={{ shoe.name }}">
+                        <button type="button" class="btn btn-primary">
+                            <i class="fas fa-boxes"></i>
+                        </button>
+                    </a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
